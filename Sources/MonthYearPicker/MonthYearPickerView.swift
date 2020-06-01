@@ -62,8 +62,8 @@ open class MonthYearPickerView: UIControl {
         didSet {
             monthDateFormatter.calendar = calendar
             monthDateFormatter.timeZone = calendar.timeZone
-            yearDateFormatter.calendar = calendar
-            yearDateFormatter.timeZone = calendar.timeZone
+//            yearDateFormatter.calendar = calendar
+//            yearDateFormatter.timeZone = calendar.timeZone
         }
     }
 
@@ -92,6 +92,7 @@ open class MonthYearPickerView: UIControl {
     
     lazy private var yearDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "th_TH")
         formatter.setLocalizedDateFormatFromTemplate("y")
         return formatter
     }()
